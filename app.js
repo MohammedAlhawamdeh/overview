@@ -1,5 +1,5 @@
 'use strict'
-
+var counter=0;
 var name = prompt('Hey, what\'s your name?')
 alert('Welcome to our website mr ' + name)
 var gender = prompt('what is your gender?')
@@ -23,6 +23,7 @@ while (q1.toLowerCase() !== 'yes' && q1.toLowerCase() !== 'y' && q1.toLowerCase(
 
 if (q1.toLowerCase() === 'yes' || q1.toLowerCase() === 'y') {
     alert('correct answer')
+    counter++
 } else {
     alert('wrong answer')
 }
@@ -35,6 +36,7 @@ while (q2.toLowerCase() !== 'yes' && q2.toLowerCase() !== 'y' && q2.toLowerCase(
 
 if (q2.toLowerCase() === 'yes' || q2.toLowerCase() === 'y') {
     alert('correct answer')
+    counter++
 } else {
     alert('wrong answer')
 }
@@ -47,6 +49,7 @@ while (q3.toLowerCase() !== 'yes' && q3.toLowerCase() !== 'y' && q3.toLowerCase(
 
 if (q3.toLowerCase() === 'yes' || q3.toLowerCase() === 'y') {
     alert('correct answer')
+    counter++
 } else {
     alert('wrong answer')
 }
@@ -59,6 +62,7 @@ while (q4.toLowerCase() !== 'yes' && q4.toLowerCase() !== 'y' && q4.toLowerCase(
 
 if (q4.toLowerCase() === 'yes' || q4.toLowerCase() === 'y') {
     alert('correct answer')
+    counter++
 } else {
     alert('wrong answer')
 }
@@ -71,6 +75,7 @@ while (q5.toLowerCase() !== 'yes' && q5.toLowerCase() !== 'y' && q5.toLowerCase(
 
 if (q5.toLowerCase() === 'yes' || q5.toLowerCase() === 'y') {
     alert('correct answer')
+    counter++
 } else {
     alert('wrong answer')
 }
@@ -83,3 +88,50 @@ if (gender === 'female') {
 }
 
 
+
+
+for (let i = 4; i > 0; i--) {
+
+    var guess = prompt('Try to guess a number between 1 - 10? - you have only '+i+ ' tries')
+
+    if (guess != null && guess != '') {
+
+        if (!isNaN(guess)) {
+
+            var correctAnswer = Math.floor((Math.random() * 10) + 1);
+
+            if (guess > correctAnswer) {
+                alert('too high')
+            } else if (guess == correctAnswer) {
+                alert('this is correct')
+                counter++
+                break
+            } else {
+                alert('too low')
+            }
+        } else {
+            alert('please add a number only')
+        }
+    } else {
+        alert('please enter a number')
+    }
+
+}alert('the correct answer is '+correctAnswer)
+
+
+
+
+var places = ['istanbul','izmir','trabzon','rize']
+
+for(let i=6;i>0;i--){
+    var q7 = prompt('Can you guess one of my fav cities in Turkey?')
+    if(q7 === places[0] || q7 === places[1] || q7 === places[2] || q7 === places[3]){
+        alert('amazing, you\'re correct')
+        counter++
+        break
+    }else{
+        alert('please try again, you have '+i+ ' tries')
+    }
+}
+alert('my fav places are '+places[0]+' ,'+places[1]+' ,'+places[2]+' and '+places[3])
+alert('your final score is '+counter +' out of 7')
